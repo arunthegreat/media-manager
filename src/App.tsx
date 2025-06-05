@@ -5,11 +5,11 @@ import './App.css';
 import { useState } from 'react';
 import axios from 'axios';
 
+const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
+
 function App() {
 
   const [file, setFile] = useState<File | null>(null);
-
-  const API_ENDPOINT = "https://llvzdkhno1.execute-api.eu-west-2.amazonaws.com/dev/upload";
 
   function getPresignUrlPromiseFunction(): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -69,9 +69,11 @@ function App() {
   </Form.Group>
   < Button variant = "primary" onClick = { handleUpload } > Upload Song </Button>
     </Card.Body>
-    </Card>
-    </Form>
-    </div>
+    < Card.Footer > URL : { API_ENDPOINT } </Card.Footer>
+      </Card>
+      </Form>
+
+      </div>
   )
 }
 
