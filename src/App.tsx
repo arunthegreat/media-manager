@@ -68,7 +68,7 @@ function App() {
   </Form.Group>
   < Button variant = "primary" onClick = { handleUpload } > Upload Song </Button>
     </Card.Body>
-    < Card.Footer > URL : { API_ENDPOINT } </Card.Footer>
+    < Card.Footer > URL : { UPLOAD_URL } </Card.Footer>
       </Card>
       </Form>
 
