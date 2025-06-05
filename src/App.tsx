@@ -33,7 +33,7 @@ function App() {
 
       // append the fields in presignedPostData in formData            
       Object.keys(presignedPostData.fields).forEach(key => {
-        formData.append(key, presignedPostData.fields[key]);
+        key !== 'acl' && formData.append(key, presignedPostData.fields[key]);
       });
 
       formData.append('file', file!);
