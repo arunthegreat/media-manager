@@ -4,8 +4,7 @@ import Form from 'react-bootstrap/Form';
 import './App.css';
 import { useState } from 'react';
 import axios from 'axios';
-
-const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
+import { UPLOAD_URL } from './config';
 
 function App() {
 
@@ -14,7 +13,7 @@ function App() {
   function getPresignUrlPromiseFunction(): Promise<any> {
     return new Promise((resolve, reject) => {
       try {
-        axios.post(API_ENDPOINT, { 'key': file?.name }).then((response) => {
+        axios.post(UPLOAD_URL, { 'key': file?.name }).then((response) => {
           resolve(response.data);
         })
           .catch((error) => {
